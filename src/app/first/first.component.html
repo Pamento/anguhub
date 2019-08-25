@@ -1,0 +1,9 @@
+
+<p [id]="idP" *ngIf="!showSection "> {{ hellos }} </p>
+<button (click)="methode()">Click !</button>
+
+<p *ngFor="let item of tableau"> {{item}} </p>
+
+<!-- <input type="text" ng-model="inputItem"> -->
+<input type="text" [(ngModel)]="inputItem">
+<button (click)="add()">put in</button>

@@ -1,0 +1,38 @@
+<div class="p">
+  <form (submit)="addPerson()">
+    <span>
+      <label>Name : </label>
+      <input type="text" name="name" [(ngModel)]="person.name">
+    </span>
+    <span>
+      <label>Birthdate : </label>
+      <input type="date" name="date" [(ngModel)]="person.birthdate">
+    </span>
+    <span>
+      <label>single : </label>
+      <input type="checkbox" name="single" [(ngModel)]="person.single">
+    </span>
+    <input type="submit" value="add this person to thate array">
+    <p>{{person.birthdate | json}}</p>
+  </form>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <td>id</td>
+      <td>name</td>
+      <td>birthdate</td>
+      <td>single</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of list">
+      <td> {{ p.id }} </td>
+      <td> {{ p.name }} </td>
+      <td> {{ p.birthdate | date:'dd/MM/yy'}} </td>
+      <td> {{ p.single }} </td>
+    </tr>
+  </tbody>
+</table>
+
